@@ -4,7 +4,7 @@ app.py — Flask backend for the Phase Ontology Engine
 
 import os
 import numpy as np
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, send_from_directory
 from flask_cors import CORS
 from dotenv import load_dotenv
 
@@ -55,6 +55,15 @@ def coord_from_dict(d):
         bulk_gap=bool(d.get("bulk_gap", False)),
         long_range_entanglement=bool(d.get("long_range_entanglement", False)),
     )
+
+
+# ============================================================
+# UI Route
+# ============================================================
+
+@app.route("/")
+def index():
+    return send_from_directory(".", "index.html")
 
 
 # ============================================================
