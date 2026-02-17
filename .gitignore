@@ -1,0 +1,33 @@
+# Secrets — never commit these
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Data files (can be large; downloaded from external DBs)
+data/
+*.h5
+*.hdf5
+
+# Exported phase registry dumps (generated at runtime)
+/tmp/phases.json
+phases.json
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
